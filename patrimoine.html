@@ -107,7 +107,7 @@ body{
 
   <aside class="sidebar">
     <div class="brand">
-      <img src="images/image.png" alt="Logo Touba Lyon">
+      <img src="images/image1.png" alt="Logo Touba Lyon">
     </div>
 
     <nav class="nav">
@@ -120,44 +120,55 @@ body{
   <main class="main">
     <div class="header">
       <h1 class="title">Inventaire (Patrimoine)</h1>
-      <img class="logoTop" src="images/image.png" alt="Logo Touba Lyon">
+      <img class="logoTop" src="images/image1.png" alt="Logo Touba Lyon">
     </div>
 
-    <section class="list">
+    <!-- La liste (vide) sera remplie par le script -->
+    <section class="list" id="list"></section>
 
+    <!-- Template de carte -->
+    <template id="cardTpl">
       <article class="card">
         <div class="top-info">
-          <p class="name">Louche</p>
-          <span class="disponible">Disponible : 4</span>
+          <p class="name"></p>
+          <span class="disponible"></span>
         </div>
         <div class="media">
-          <img src="images/louche.jpeg" alt="Louche">
+          <img alt="">
         </div>
       </article>
+    </template>
 
-      <article class="card">
-        <div class="top-info">
-          <p class="name">Spatule</p>
-          <span class="disponible">Disponible : 2</span>
-        </div>
-        <div class="media">
-          <img src="images/spatule.jpg" alt="Spatule">
-        </div>
-      </article>
+    <script>
+      const items = [
+        { name: "Louche petit modèle", qty: 4, img: "images/louche.jpeg" },
+        { name: "Casseroles", qty: 4, img: "images/casseroles.jpeg" },
+        { name: "Panier vapeur inox", qty: 2, img: "images/paniervapeurinox.png" },
+        { name: "Bassine", qty: 1, img: "images/bassine.png" },
+        { name: "Balais ", qty: 2, img: "images/balais.png" },
+        { name: "Balais ", qty: 1, img: "images/bacderestauration.png" },
+        { name: "Seau d'eau petit modèle ", qty: 4, img: "images/seaueau.png" },
+        { name: "Petite poubelle ", qty: 1, img: "images/petitpoubelle.png" },
+        { name: "Auge en plastique ", qty: 4, img: "images/augeenplastique.png" },
+        { name: "Plateau de service(grand et petit) ", qty: 11, img: "images/plateaudeservice.png" },
+        // ... ajoute ici des centaines d’items
+      ];
 
-      <article class="card">
-        <div class="top-info">
-          <p class="name">Couteau</p>
-          <span class="disponible">Disponible : 1</span>
-        </div>
-        <div class="media">
-          <img src="images/couteau.jpg" alt="Couteau">
-        </div>
-      </article>
+      const list = document.getElementById("list");
+      const tpl = document.getElementById("cardTpl");
 
-    </section>
+      items.forEach(it => {
+        const node = tpl.content.cloneNode(true);
+        node.querySelector(".name").textContent = it.name;
+        node.querySelector(".disponible").textContent = `Disponible : ${it.qty}`;
+        const img = node.querySelector("img");
+        img.src = it.img;
+        img.alt = it.name;
+        list.appendChild(node);
+      });
+    </script>
+
   </main>
-
 </div>
 </body>
 </html>
