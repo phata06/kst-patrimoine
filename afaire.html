@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>A faire - Commission Patrimoine</title>
+
+<style>
+:root{
+  --bg:#ffffff;
+  --card:#f5f5f5;
+  --text:#1a1a1a;
+  --muted:#666;
+  --green:#0f3d1f;
+  --orange:#e66d02;
+  --radius:16px;
+  --shadow:0 6px 18px rgba(0,0,0,.10);
+}
+
+*{ box-sizing:border-box; }
+
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+.layout{
+  min-height:100vh;
+  display:flex;
+}
+
+/* MENU */
+.sidebar{
+  width:92px;
+  background:var(--green);
+  padding:14px 10px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.brand{
+  display:flex;
+  justify-content:center;
+  margin-bottom:6px;
+}
+
+.brand img{
+  width:52px;
+  height:auto;
+  border-radius:10px;
+  background:#fff;
+  padding:4px;
+}
+
+.nav a{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  text-decoration:none;
+  color:#fff;
+  padding:10px 8px;
+  border-radius:12px;
+  font-size:12px;
+  font-weight:700;
+}
+
+.nav a:hover{
+  background:rgba(255,255,255,.12);
+}
+
+.nav a.active{
+  background:rgba(255,255,255,.20);
+  outline:1px solid rgba(255,255,255,.25);
+}
+
+/* CONTENU */
+.main{
+  flex:1;
+  padding:16px;
+  max-width:620px;
+  margin:0 auto;
+}
+
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-bottom:20px;
+}
+
+.title{
+  margin:0;
+  font-size:22px;
+  font-weight:900;
+}
+
+.logoTop{
+  width:70px;
+  height:auto;
+}
+
+.intro{
+  background:linear-gradient(135deg, #0f3d1f, #176832);
+  color:white;
+  padding:18px;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  margin-bottom:20px;
+}
+
+.intro h2{
+  margin:0 0 6px;
+  font-size:20px;
+}
+
+.intro p{
+  margin:0;
+  opacity:.9;
+  line-height:1.4;
+}
+
+.todo-list{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+.todo-card{
+  background:var(--card);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:16px;
+  border-left:6px solid var(--orange);
+}
+
+.todo-head{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:10px;
+}
+
+.badge{
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  background:var(--green);
+  color:#fff;
+  display:grid;
+  place-items:center;
+  font-weight:900;
+}
+
+.todo-card h3{
+  margin:0;
+  font-size:17px;
+  font-weight:900;
+}
+
+.tag{
+  display:inline-block;
+  margin-top:6px;
+  background:rgba(230,109,2,.12);
+  color:var(--orange);
+  font-size:12px;
+  font-weight:900;
+  padding:5px 9px;
+  border-radius:999px;
+}
+
+.todo-card ul{
+  margin:12px 0 0;
+  padding-left:20px;
+}
+
+.todo-card li{
+  margin-bottom:8px;
+  line-height:1.4;
+  color:#333;
+}
+
+.important{
+  font-weight:900;
+  color:var(--green);
+}
+
+@media(max-width:520px){
+  .main{
+    padding:14px;
+  }
+
+  .title{
+    font-size:19px;
+  }
+
+  .todo-card{
+    padding:14px;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="layout">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="images/logo.png" alt="Logo Touba Lyon">
+    </div>
+
+    <nav class="nav">
+      <a href="index.html">Accueil</a>
+      <a href="patrimoine.html">Patrimoine</a>
+      <a class="active" href="afaire.html">A faire</a>
+      <a href="contacts.html">Contacts</a>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <div class="header">
+      <h1 class="title">A faire</h1>
+      <img class="logoTop" src="images/logo.png" alt="Logo Touba Lyon">
+    </div>
+
+    <section class="intro">
+      <h2>Wadial Magal</h2>
+      <p>Liste des actions prioritaires pour la Commission Patrimoine KST.</p>
+    </section>
+
+    <section class="todo-list">
+
+      <article class="todo-card">
+        <div class="todo-head">
+          <div class="badge">1</div>
+          <div>
+            <h3>Réparer tous les réchauds et les tester</h3>
+            <span class="tag">Wadial Magal</span>
+          </div>
+        </div>
+        <ul>
+          <li>
+            <span class="important">Serigne Saliou Ngingue</span> se charge d'appeler un partenaire pour la réparation :
+            <span class="important">Serigne Ibrahima Traoré</span>.
+          </li>
+        </ul>
+      </article>
+
+      <article class="todo-card">
+        <div class="todo-head">
+          <div class="badge">2</div>
+          <div>
+            <h3>Être informé du besoin restauration pour le Magal</h3>
+            <span class="tag">Besoin estimé : 5 réchauds</span>
+          </div>
+        </div>
+        <ul>
+          <li>Savoir le nombre de réchauds nécessaires afin d'anticiper l'achat des indés et des réchauds.</li>
+          <li>La Commission Patrimoine se charge d'appeler <span class="important">Soxna Oumoul Khadim</span> pour la restauration.</li>
+          <li>Acheter <span class="important">5 réchauds</span>.</li>
+          <li>Budget : <span class="important">KST / Patrimoine KST</span>.</li>
+        </ul>
+      </article>
+
+      <article class="todo-card">
+        <div class="todo-head">
+          <div class="badge">3</div>
+          <div>
+            <h3>Nettoyer les tapis et les comptes</h3>
+            <span class="tag">Wadial Magal</span>
+          </div>
+        </div>
+        <ul>
+          <li>Prévoir le nettoyage des tapis chez KST le <span class="important">premier week-end du mois de juin</span>.</li>
+        </ul>
+      </article>
+
+      <article class="todo-card">
+        <div class="todo-head">
+          <div class="badge">4</div>
+          <div>
+            <h3>Les chapiteaux</h3>
+            <span class="tag">Budget Magal</span>
+          </div>
+        </div>
+        <ul>
+          <li>Évaluer l'état des chapiteaux disponibles.</li>
+          <li>Acheter <span class="important">3 chapiteaux</span>.</li>
+        </ul>
+      </article>
+
+    </section>
+  </main>
+
+</div>
+</body>
+</html>
